@@ -1,4 +1,4 @@
-variable "deploy_pat" {
+variable "github_token" {
   type = string
 }
 

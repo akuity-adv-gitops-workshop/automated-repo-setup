@@ -19,7 +19,7 @@ resource "github_actions_secret" "deploy-pat" {
 
   repository      = github_repository.repos[each.key].name
   secret_name     = "DEPLOY_PAT"
-  plaintext_value = var.deploy_pat
+  plaintext_value = var.github_token
 }
 
 # Create release to show repo is ready.
