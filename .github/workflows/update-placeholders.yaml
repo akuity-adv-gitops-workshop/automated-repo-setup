@@ -5,6 +5,9 @@ on:
       username:
         required: true
         type: string
+    secrets:
+      DEPLOY_PAT:
+        required: true
 jobs:
   search-and-replace:
     runs-on: ubuntu-latest
