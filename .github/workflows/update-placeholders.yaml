@@ -18,11 +18,14 @@ jobs:
           fetch-depth: 0 # otherwise, there would be errors pushing refs to the destination repository.
           ref: 'main'  # checkout `main` instead of the `setup-complete` tag.
 
+      - name: Input Formatting
+        run: |
+          echo "USERNAME=${GITHUB_REPOSITORY_OWNER,,}" >>${GITHUB_ENV}
       - name: Find and Replace
         uses: jacobtomlinson/gha-find-replace@v3
         with:
           find: "<username>"
-          replace: "${{ inputs.username }}"
+          replace: "${{ env.USERNAME }}"
           regex: false
           exclude: ".github/workflows/update-placeholders.yaml"
       - name: Commit files
