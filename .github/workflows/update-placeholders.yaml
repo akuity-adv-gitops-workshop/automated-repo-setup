@@ -20,7 +20,7 @@ jobs:
 
       - name: Input Formatting
         run: |
-          echo "USERNAME=${inputs.username,,}" >>${GITHUB_ENV}
+          echo "USERNAME=${GITHUB_REPOSITORY_OWNER,,}" >>${GITHUB_ENV}
       - name: Find and Replace
         uses: jacobtomlinson/gha-find-replace@v3
         with:
