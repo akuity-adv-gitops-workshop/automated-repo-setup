@@ -2,7 +2,7 @@
 
 echo "post-start start" >> ~/.status.log
 
-kind export kubeconfig --name dev
+kind export kubeconfig --name workshop
 
 terraform init >> ~/.status.log 2>&1
 
